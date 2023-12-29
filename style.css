@@ -1,0 +1,113 @@
+(https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+:root {
+    --bgColor: #223344;
+    --bgColor2: #090a0f;
+    --accentColor: #FFF;
+    --font: 'Karla', sans-serif;
+    --delay: .3s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: var(--font);
+    background-image: url("assents/background.jpg");
+    opacity: 0;
+    animation: 1s ease-out var(--delay) 1 transitionAnimation; /*duratio*/
+    animation-fill-mode: forwards;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+#profilePicture, #profilePicture img {
+    poaition: relative;
+    widht: 125px;
+    height; 125px;
+    display: block;
+    margin: 40px auto 20px;
+    border-radius: 50%;
+    -webkit-tap-hightlight-color; transparent;
+
+}
+
+#userName {
+    color: var(--accentColor);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.25;
+    display; block;
+    font-family: var(--font);
+    widht: 100%;
+    text-aling: center;
+    text-decoration: none;
+}
+
+#links {
+    max-widht: 675x;
+    width: auto;
+    display: block;
+    margin: 27px;
+}
+
+.link {
+    position: relative;
+    background-color: transparent;
+    color: var(--accentColor);
+    border: solid var(--accentColor) 2px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px; /* 17 px */
+    text-decoration: none;
+    /* transition: all .25s cubic-bezier(.08, .59, .29, .99); */
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+    .link:hover {
+        background-color: var(--accentColor);
+        color: var(--bgColor);
+    }
+}
+
+.link:active {
+    background-color: var(--accentColor);
+    color: var(--bgColor);
+}
+
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay:target .popup{
+    transform:scale(1) ;
+    top: 0;
+    /* right: 0; */
+    /* transform: rotate(0); */
+}
